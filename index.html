@@ -17,6 +17,10 @@
       </nav>
     </header>
     <div id="left">
+      <div id="welcome">
+        <p id="message"></p>
+        <img id="x" onClick="hide('welcome')" src="assets/close.svg"/>
+      </div>
       <div class="overview">
         <div id="income">
           <h2>INCOME</h2>
@@ -32,9 +36,11 @@
         </div>
       </div>
     <div class="accounts">
-      <h3>Accounts</h3>
-      <button>MANAGE ACCOUNTS</button>
-      <div id="checking">
+      <h3 class="lefty">Accounts</h3>
+      <button class="righty">MANAGE ACCOUNTS</button>
+    </div>
+      <div class="account_names">
+        <div id="checking">
         <img class ="lefty" src="assets/checking.svg">
         <p class="lefty">Wells Fargo</p>
         <p class="righty">Checking</p>
@@ -124,4 +130,5 @@
     </table>
     </div>
   </body>
+  <script src="main.js"></script>
 </html>

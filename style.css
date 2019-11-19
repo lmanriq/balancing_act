@@ -1,3 +1,14 @@
+#welcome {
+  background-image: linear-gradient(to bottom right, #8ED1DC, #E3F4F6);
+  padding: 30px;
+  font-size: 20px;
+}
+
+#x {
+  height: 10px;
+  float: right;
+}
+
 nav img {
   height: 40px;
 }
@@ -15,7 +26,7 @@ nav {
 }
 
 #logo {
-  padding: 20px 0 200px 0;
+  padding: 20px 0 300px 0;
   height: 50px;
 }
 
@@ -23,7 +34,7 @@ nav {
   border-left: 2px solid #1CA3BA;
 }
 
-.accounts img {
+.account_names img {
   height: 40px;
 }
 
@@ -46,27 +57,39 @@ body {
   font-size: 10px;
 }
 
-.accounts div {
+.account_names div {
   background-color: white;
   border-radius: 10px;
   margin: 10px;
   height: 75px;
 }
 
-.accounts {
+.account_names {
     float: left;
     width: 100%;
     margin: 10px;
 }
 
-.lefty {
+
+.lefty{
   float: left;
-  padding: 10px 80px 10px 10px;
 }
 
 .righty {
   float: right;
+}
+
+.accounts h1 {
+  margin-left: 20px;
+}
+
+.account_names .lefty {
+  padding: 10px 80px 10px 10px;
+}
+
+.account_names .righty {
   padding-right: 40px;
+  padding-top: 10px;
 }
 
 #left {
