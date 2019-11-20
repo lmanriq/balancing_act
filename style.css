@@ -1,22 +1,44 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+body {
+  font-family: 'Biryani', sans-serif;
+  background-color: #F5F5F5;
+  margin-left: 90px;
+}
+
 #welcome {
   background-image: linear-gradient(to bottom right, #8ED1DC, #E3F4F6);
-  padding: 30px;
+  padding: 20px 20px 35px 20px;
   font-size: 20px;
+  margin: 0 10px 0 10px;
+  position: relative;
+  height: 50px;
+  font-weight: bold;
 }
 
 #x {
   height: 10px;
-  float: right;
+  position: absolute;
+  top: 20px;
+  left: 555px;
+}
+
+#logo {
+  height: 50px;
+  padding: 10px 0 250px 0;
 }
 
 nav img {
   height: 40px;
+  margin: 0 5px 0 5px;
 }
 
 nav {
   position: fixed;
   height: 100%;
-  width: 50px;
+  width: 55px;
   z-index: 1;
   background-color: white;
   overflow-x: hidden;
@@ -25,51 +47,32 @@ nav {
   padding: 0 10px 0 10px;
 }
 
-#logo {
-  padding: 20px 0 300px 0;
-  height: 50px;
-}
-
 .icon:hover {
   border-left: 2px solid #1CA3BA;
 }
 
-.account_names img {
-  height: 40px;
+.overview {
+  float: left;
+  margin: 0 0 20px 0;
+  padding: 0;
 }
 
-body {
-  font-family: 'Biryani', sans-serif;
-  background-color: #F5F5F5;
-  margin-left: 90px;
+.overview section, #welcome, .account_names section {
+  border-radius: 5px;
 }
 
-.overview div {
+.overview section {
   background-color: white;
   display: inline-block;
   padding: 10px;
   box-shadow: 2px 2px rgba(0,0,0,0.05);
   margin: 10px;
-  width: 100px;
+  width: 158px;
 }
 
 .overview h2 {
   font-size: 10px;
 }
-
-.account_names div {
-  background-color: white;
-  border-radius: 10px;
-  margin: 10px;
-  height: 75px;
-}
-
-.account_names {
-    float: left;
-    width: 100%;
-    margin: 10px;
-}
-
 
 .lefty{
   float: left;
@@ -79,8 +82,34 @@ body {
   float: right;
 }
 
-.accounts h1 {
-  margin-left: 20px;
+.accounts {
+  width: 100%;
+  margin: 0 0 0 15px;
+  padding: 0;
+}
+
+.accounts h3 {
+  /* margin-left: 40px;
+  text-align: left; */
+  float: left;
+  margin: 0;
+}
+
+.account_names img {
+  height: 40px;
+}
+
+.account_names section {
+  background-color: white;
+  margin: 10px;
+  height: 75px;
+}
+
+.account_names {
+    float: left;
+    width: 100%;
+    margin: 10px 10px 10px 0;
+    margin-top: 0;
 }
 
 .account_names .lefty {
@@ -94,18 +123,21 @@ body {
 
 #left {
   width: 45%;
+  float: left;
 }
 
 #right {
   float: right;
   width: 45%;
-  margin: auto;
-  background-color: white;
   padding: 10px;
+
 }
 
 table {
   border-collapse: collapse;
+  padding: 10px;
+  width: 400px;
+  background-color: white;
 }
 
 tr {
@@ -113,8 +145,34 @@ tr {
   border-width: 1px 0;
 }
 
+td {
+  padding: 10px;
+}
+
 button {
   background-color: #1CA3BA;
   border-radius: 10px;
   color: white;
+  float: right;
+  padding: 5px;
+  width: 150px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.accounts button {
+  margin-right: 25px;
+}
+
+.chart-head {
+  width: 380px;
+  margin: 0;
+  background: white;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.chart-head h4{
+  float: left;
+  margin: 0;
 }

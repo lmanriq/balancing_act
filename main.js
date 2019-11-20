@@ -18,10 +18,7 @@ function hide(banner) {
   box.style.display = 'none';
 };
 
-var person = prompt("What is your name?", "Juju");
-
-console.log(person);
-console.log(document.getElementById("message"));
+var person = prompt("What is your name?", "Buttercup");
 
 if (person != null) {
   document.getElementById("message").innerHTML =
