@@ -8,7 +8,6 @@ function hide(banner) {
 
 x.addEventListener('click', function () {hide('welcome')});
 
-
 //Prompt for username
 var person = prompt("What is your name?", "Buttercup");
 
@@ -37,3 +36,19 @@ function makeTeal(button1, button2, button3) {
   button2.classList.remove('tealClick');
   button3.classList.remove('tealClick');
 }
+
+// Hide main when clicking wallet
+function hide(content) {
+  var allContent = document.querySelector(content);
+  allContent.style.display = 'none';
+}
+
+transactionsButton.addEventListener('click', function () {hide('main')});
+
+//Show content again when clicking clipboard
+function showAgain(content) {
+  var allContent = document.querySelector(content);
+  allContent.style.display = '';
+}
+
+dashButton.addEventListener('click', function () {showAgain('main')});
