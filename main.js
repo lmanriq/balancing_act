@@ -38,11 +38,6 @@ function makeTeal(button1, button2, button3) {
 }
 
 // Hide main when clicking wallet
-function hide(content) {
-  var allContent = document.querySelector(content);
-  allContent.style.display = 'none';
-}
-
 transactionsButton.addEventListener('click', function () {hide('main')});
 
 //Show content again when clicking clipboard

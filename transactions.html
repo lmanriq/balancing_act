@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transactions</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Biryani&display=swap"
+  rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Transactions</h1>
+    <nav>
+      <img id="logo" src="assets/elephant.svg">
+      <a href="index.html"><img class="icon" id="dash"
+        src="assets/dashboard.svg"></a>
+      <a href="transactions.html"><img class="icon tealClick" id="transactions"
+        src="assets/transactions.svg"></a>
+      <img class="icon" id="profile" src="assets/profile.svg">
+    </nav>
+  </header>
+  <body>
+    <div id="trans-table">
+      <header class="chart-head">
+        <h4>Transactions</h4>
+        <button id="all">ALL</button>
+        <button id="inflow">INFLOW</button>
+        <button id="outflow">OUTFLOW</button>
+      </header>
+      <table>
+        <colgroup span="5"></colgroup>
+        <tr>
+          <th>Date</th>
+          <th>Account</th>
+          <th>Payee</th>
+          <th>Inflow</th>
+          <th>Outflow</th>
+        </tr>
+        <tr>
+          <td>Oct 25, 2019</td>
+          <td>Target</td>
+          <td>Credit Card</td>
+          <td>-</td>
+          <td>$82.35</td>
+        </tr>
+        <tr>
+          <td>Oct 24, 2019</td>
+          <td>Credit Card</td>
+          <td>Express</td>
+          <td>-</td>
+          <td>$212.24</td>
+        </tr>
+        <tr>
+          <td>Oct 22, 2019</td>
+          <td>Checking</td>
+          <td>Paycheck</td>
+          <td>$1,319.12</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Oct 21, 2019</td>
+          <td>Credit Card</td>
+          <td>Trader Joe's</td>
+          <td>-</td>
+          <td>$54.92</td>
+        </tr>
+        <tr>
+          <td>Oct 20, 2019</td>
+          <td>Credit Card</td>
+          <td>Shell</td>
+          <td>-</td>
+          <td>$46.23</td>
+        </tr>
+        <tr>
+          <td>Oct 19, 2019</td>
+          <td>Rent</td>
+          <td>$800.00</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Oct 19, 2019</td>
+          <td>Checking</td>
+          <td>Hapa Sushi</td>
+          <td>-</td>
+          <td>$13.97</td>
+        </tr>
+        <tr>
+          <td>Oct 18, 2019</td>
+          <td>Credit Card</td>
+          <td>Pig Train</td>
+          <td>-</td>
+          <td>$4.83</td>
+        </tr>
+        <tr>
+          <td>Oct 18, 2019</td>
+          <td>Checking</td>
+          <td>RTD</td>
+          <td>-</td>
+          <td>$6.00</td>
+        </tr>
+        <tr>
+          <td>Oct 24, 2019</td>
+          <td>Checking</td>
+          <td>Express</td>
+          <td>-</td>
+          <td>$212.24</td>
+        </tr>
+        <tr>
+          <td>Oct 24, 2019</td>
+          <td>Checking</td>
+          <td>Express</td>
+          <td>-</td>
+          <td>$212.24</td>
+        </tr>
+        <tr>
+          <td>Oct 24, 2019</td>
+          <td>Checking</td>
+          <td>Express</td>
+          <td>-</td>
+          <td>$212.24</td>
+        </tr>
+        <tr>
+          <td>Oct 24, 2019</td>
+          <td>Checking</td>
+          <td>Express</td>
+          <td>-</td>
+          <td>$212.24</td>
+        </tr>
+        <tr>
+          <td>Oct 24, 2019</td>
+          <td>Checking</td>
+          <td>Express</td>
+          <td>-</td>
+          <td>$212.24</td>
+        </tr>
+      </table>
+      <form>
+        <p>Type of Transaction:</p>
+        <select>
+          <option value="expense">Expense</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="cat-toys">Cat Toys</option>
+        </select>
+        <p>Category:</p>
+        <select>
+          <option value="select-one">-Select One-</option>
+          <option value="entertainment">Food</option>
+          <option value="cat-toys">Rent</option>
+        </select>
+        <p>Account from:</p>
+        <select>
+          <option value="select-one">-Select One-</option>
+          <option value="checking">Checking</option>
+          <option value="savings">Savings</option>
+          <option value="credit-card">Credit Card</option>
+        </select>
+        <p>Payee:</p>
+        <input type="text" name="payee">
+        <p>Outflow:</p>
+        <input type="text" name="outflow">
+        <p>Category:</p>
+        <input type="text" name="category">
+        <button>Log Expense</button>
+      </form>
+  </body>
+</html>
