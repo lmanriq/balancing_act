@@ -170,31 +170,38 @@ function addTransactionsSection() {
         <h3>New Transaction</h3>
         <p>Type of Transaction:</p>
         <select>
-          <option value="expense">Expense</option>
-          <option value="entertainment">Entertainment</option>
-          <option value="cat-toys">Cat Toys</option>
+          <option value="select-one">-Select One-</option>
+          <option value="inflow">Inflow</option>
+          <option value="outflow">Outflow</option>
         </select>
         <p>Category:</p>
         <select>
           <option value="select-one">-Select One-</option>
-          <option value="entertainment">Food</option>
-          <option value="cat-toys">Rent</option>
+          <option value="groceries">Groceries</option>
+          <option value="bills">Bills</option>
+          <option value="fun-money">Fun Money</option>
+          <option value="paycheck">Paycheck</option>
         </select>
         <p>Account from:</p>
         <select>
           <option value="select-one">-Select One-</option>
           <option value="checking">Checking</option>
           <option value="savings">Savings</option>
-          <option value="credit-card">Credit Card</option>
+          <option value="amazon-credit-card">Amazon Credit Card</option>
+          <option value="southwest-credit-card">Southwest Credit Card</option>
         </select>
-        <p>Payee:</p>
+        <p id="payee">Payee:</p>
         <input type="text" name="payee">
-        <p>Inflow:</p>
+        <p id="amount">Amount:</p>
         <input type="text" name="inflow">
-        <p>Outflow:</p>
+        <p id="memo">Memo (Optional):</p>
         <input type="text" name="outflow">
         <button id="log">Log Expense</button>
       </form>
+      <section id="expense-section" class="hidden">
+        <p id="expense-message"></p>
+        <img id="x2" src="assets/close.svg"/>
+      </section>
   </section>`;
 }
 
@@ -206,3 +213,20 @@ function showAgain(content) {
 }
 
 dashButton.addEventListener('click', function () {showAgain('main')});
+
+// Expense confirmation banner pop up
+var expenseButton = document.getElementById('log');
+
+expenseButton.addEventListener('click', logNewExpense)
+
+function logNewExpense() {
+  var dollarAmount = document.getElementById('amount');
+  var expenseAmountMessage = `Your expense of $${dollarAmount} has been logged.`;
+  var expenseSection = document.getElementById('expense-section');
+  document.getElementById('expense-message').innerText = expenseAmountMessage;
+  expenseSection.classList.remove('hidden');
+  expenseSection.classList.add('expense-confirmation');
+}
+
+// Exit out of expense pop up
+x2.addEventListener('click', function () {hide('expense-section')});
