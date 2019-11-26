@@ -1,6 +1,6 @@
 body {
-  font-family: 'Biryani', sans-serif;
   background-color: #F5F5F5;
+  font-family: 'Biryani', sans-serif;
   margin-left: 90px;
 }
 
@@ -10,19 +10,19 @@ h1 {
 
 #welcome {
   background-image: linear-gradient(to right, #8ED1DC, #E3F4F6);
-  padding: 20px 20px 35px 20px;
   font-size: 20px;
-  margin: 0 10px 0 10px;
-  position: relative;
-  height: 50px;
   font-weight: bold;
+  height: 50px;
+  margin: 0 10px 0 10px;
+  padding: 20px 20px 35px 20px;
+  position: relative;
 }
 
 #x {
   height: 10px;
+  left: 555px;
   position: absolute;
   top: 20px;
-  left: 555px;
 }
 
 #logo {
@@ -35,26 +35,23 @@ h1 {
   margin: 0 10px 0 10px;
 }
 
-.tealClick {
-  border-left: 2px solid #1CA3BA;
-  padding-left: 7px;
-}
-
-nav {
-  position: fixed;
-  height: 100%;
-  width: 65px;
-  z-index: 1;
-  background-color: white;
-  overflow-x: hidden;
-  top: 0;
-  left: 0;
-  padding: 0 10px 0 10px;
-}
-
+.tealClick,
 .icon:hover {
   border-left: 2px solid #1CA3BA;
   padding-left: 7px;
+  margin: 0;
+}
+
+nav {
+  background-color: white;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  padding: 0 10px 0 10px;
+  position: fixed;
+  top: 0;
+  width: 65px;
+  z-index: 1;
 }
 
 .overview {
@@ -72,13 +69,15 @@ nav {
 .overview section {
   background-color: white;
   display: inline-block;
+  margin: 11px;
   padding: 10px;
-  margin: 10px;
   width: 156px;
 }
 
 .overview section,
-.account_names section {
+.account_names section,
+input,
+option {
   box-shadow: 2px 2px rgba(0,0,0,0.05);
 }
 
@@ -95,14 +94,14 @@ nav {
 }
 
 .accounts {
-  width: 100%;
   margin: 0 0 0 15px;
   padding: 0;
+  width: 100%;
 }
 
 .accounts h3 {
   float: left;
-  margin: 0;
+  margin: 0 340px 0 0;
 }
 
 .accounts button {
@@ -124,15 +123,15 @@ nav {
 
 .account_names section {
   background-color: white;
-  margin: 10px;
   height: 75px;
+  margin: 10px;
 }
 
 .account_names {
     float: left;
-    width: 100%;
     margin: 10px 10px 10px 0;
     margin-top: 0;
+    width: 100%;
 }
 
 .account_names .lefty {
@@ -145,35 +144,36 @@ nav {
 }
 
 #left {
-  width: 45%;
   float: left;
+  width: 45%;
 }
 
 #right {
-  float: right;
-  width: 35%;
-  padding: 20px 20px 20px 30px;
   background-color: white;
+  float: right;
   margin-right: 50px;
-
+  padding: 20px 20px 20px 30px;
+  width: 35%;
 }
+
+/* Dash Transaction Table Section  */
 
 .chart-head {
-  width: 430px;
   margin: 0;
-  padding: 10px;
   overflow: hidden;
+  padding: 10px;
+  width: 430px;
 }
 
-.chart-head h4{
+#recent-trans .chart-head {
   float: left;
   margin: 0;
 }
 
 th,
 td {
-  text-align: left;
   padding: 10px;
+  text-align: left;
 }
 
 table {
@@ -191,10 +191,104 @@ button {
   background-color: #1CA3BA;
   border-radius: 15px;
   color: white;
-  float: right;
   padding: 5px;
   width: 150px;
   font-size: 10px;
   font-weight: bold;
   height: 32px;
+}
+
+.dash-page button {
+  float: right;
+}
+
+/* transaction page styling  */
+
+#trans-header {
+  display: inline-block;
+}
+
+#trans h1 {
+  float: left;
+}
+
+#transactions-title {
+  font-size: 27px;
+}
+
+.trans-buttons {
+  height: 100px;
+  display: inline-block;
+  float: right;
+  margin-top: 32px;
+}
+
+#transactions-title {
+  float: left;
+}
+
+#inflow,
+#outflow {
+  background-color: white;
+  border: 2px solid #1CA3BA;
+  color: #1CA3BA;
+}
+
+#transactions-section {
+  margin: 0 50px 0 20px;
+  overflow: auto;
+  padding-left: 45px;
+  width: 50%;
+}
+
+#trans-table {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#trans-table table {
+  margin: 20px auto;
+  padding: 10px;
+  width: 90%;
+}
+
+#trans-table td,
+#trans-table th {
+  padding-left: 20px;
+}
+
+.formy {
+  background-color: white;
+  margin: 100px 50px 0 0;
+  padding-left: 20px;
+  width: 35%;
+  overflow: auto;
+}
+
+.formy h3 {
+  text-align: center;
+}
+
+.formy p {
+  margin-left: 12px;
+}
+
+select, input {
+  width: 90%;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  height: 30px;
+  display: inline-block;
+  -webkit-box-shadow: 2px 2px rgba(0,0,0,0.05);
+  -moz-box-shadow: 2px 2px rgba(0,0,0,0.05);
+  font-family: 'Biryani', sans-serif;
+}
+
+#log {
+  margin: 30px 10px;
 }
