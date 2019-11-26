@@ -313,3 +313,7 @@ select, input {
   top: 10px;
   right: 10px;
 }
+
+.wrong {
+  border: 2px solid red;
+}

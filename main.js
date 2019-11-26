@@ -209,12 +209,16 @@ function addTransactionsSection() {
 }
 
 function addTransEventListeners() {
-  // Expense confirmation banner pop up
-    var expenseButton = document.getElementById('log');
-    expenseButton.addEventListener('click', logNewExpense)
+  // On button click, either log expense or show fields that need to be updated
+  var expenseButton = document.getElementById('log');
+  expenseButton.addEventListener('click', logNewExpense)
   // Exit out of expense pop up
-    x2.addEventListener('click', function () {hide('expense-section')});
+  x2.addEventListener('click', function () {hide('expense-section')});
+  // Mark empty required fields in red
 }
+
+// Expense confirmation banner pop up after checking that there is a value
+
 //Show content again when clicking clipboard
 function showAgain(content) {
   var allContent = document.querySelector(content);
@@ -226,10 +230,21 @@ dashButton.addEventListener('click', function () {showAgain('main')});
 
 //Expense banner function
 function logNewExpense() {
+  var payee = document.getElementById('payee');
+  var amount = document.getElementById('amount');
   var dollarAmount = document.getElementById('amount').value;
   var expenseAmountMessage = `Your expense of $${dollarAmount} has been logged.`;
   var expenseSection = document.getElementById('expense-section');
-  document.getElementById('expense-message').innerText = expenseAmountMessage;
-  expenseSection.classList.remove('hidden');
-  expenseSection.classList.add('expense-confirmation');
+
+  if (payee.value === '') {
+    payee.classList.add('wrong');
+  } else if (amount.value === '') {
+    amount.classList.add('wrong')
+  } else {
+    payee.classList.remove('wrong')
+    amount.classList.remove('wrong')
+    document.getElementById('expense-message').innerText = expenseAmountMessage;
+    expenseSection.classList.remove('hidden');
+    expenseSection.classList.add('expense-confirmation');
+  }
 }
