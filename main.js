@@ -225,13 +225,16 @@ function logNewExpense() {
   var expenseAmountMessage = `Your expense of $${dollarAmount} has been logged.`;
   var expenseSection = document.getElementById('expense-section');
 
-  if (payee.value === '') {
+  if (payee.value === '' && amount.value === '') {
+    payee.classList.add('wrong');
+    amount.classList.add('wrong');
+  } else if(payee.value === '') {
     payee.classList.add('wrong');
   } else if (amount.value === '') {
-    amount.classList.add('wrong')
+    amount.classList.add('wrong');
   } else {
-    payee.classList.remove('wrong')
-    amount.classList.remove('wrong')
+    payee.classList.remove('wrong');
+    amount.classList.remove('wrong');
     document.getElementById('expense-message').innerText = expenseAmountMessage;
     expenseSection.classList.remove('hidden');
     expenseSection.classList.add('expense-confirmation');
