@@ -211,22 +211,11 @@ function addTransactionsSection() {
 function addTransEventListeners() {
   // On button click, either log expense or show fields that need to be updated
   var expenseButton = document.getElementById('log');
-  expenseButton.addEventListener('click', logNewExpense)
+  expenseButton.addEventListener('click', logNewExpense);
   // Exit out of expense pop up
   x2.addEventListener('click', function () {hide('expense-section')});
   // Mark empty required fields in red
 }
-
-// Expense confirmation banner pop up after checking that there is a value
-
-//Show content again when clicking clipboard
-function showAgain(content) {
-  var allContent = document.querySelector(content);
-  allContent.style.display = '';
-  document.getElementById('transaction-section-to-add').innerHTML = '';
-}
-
-dashButton.addEventListener('click', function () {showAgain('main')});
 
 //Expense banner function
 function logNewExpense() {
@@ -247,4 +236,20 @@ function logNewExpense() {
     expenseSection.classList.remove('hidden');
     expenseSection.classList.add('expense-confirmation');
   }
+
+  payee.addEventListener('input', function () {clearRed(payee)});
+  amount.addEventListener('input', function () {clearRed(amount)});
+
+  function clearRed(field) {
+    field.classList.remove('wrong');
+  }
 }
+
+//Show content again when clicking clipboard
+function showAgain(content) {
+  var allContent = document.querySelector(content);
+  allContent.style.display = '';
+  document.getElementById('transaction-section-to-add').innerHTML = '';
+}
+
+dashButton.addEventListener('click', function () {showAgain('main')});
