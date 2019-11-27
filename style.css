@@ -77,8 +77,12 @@ nav {
 .overview section,
 .account_names section,
 input,
-option {
+option,
+#profile-box,
+.account,
+#add-acount {
   box-shadow: 2px 2px rgba(0,0,0,0.05);
+  border-radius: 5px;
 }
 
 .overview h2 {
@@ -279,7 +283,6 @@ select, input {
   width: 90%;
   height: 20px;
   margin-left: 10px;
-  border-radius: 5px;
   background: white;
   border: 1px solid rgba(0,0,0,0.05);
   height: 30px;
@@ -316,4 +319,140 @@ select, input {
 
 .wrong {
   border: 2px solid red;
+}
+
+
+/* accounts section */
+#accounts {
+  display: flex;
+  justify-content: space-around;
+}
+
+#accounts h3 {
+  font-size: 30px;
+}
+
+#your-profile-section {
+  width: 35%;
+}
+
+#your-accounts-section {
+  width: 55%;
+}
+
+#profile-box,
+.account,
+#add-account {
+  background-color: white;
+}
+
+#profile-box {
+  position: relative;
+  padding: 20px 0 0 30px;
+  height: 200px;
+}
+
+#accounts h4 {
+  font-size: 25px;
+}
+
+#profile-box h4 {
+  padding: 0;
+  margin: 0;
+}
+
+#profile-box p {
+  margin: 0;
+  font-size: 15px;
+}
+
+#edit-info,
+#add-account-button {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+#edit-info {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 126px;
+}
+
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+.account,
+#fields {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.account {
+  margin-top: 20px;
+}
+
+
+.accounts-buttons {
+  margin: 15px 18px 0 0;
+}
+
+.edit,
+.delete {
+  width: 60px;
+  height: 20px;
+  padding: 0;
+}
+
+.delete {
+  background-color: red;
+  margin-left: 10px;
+}
+
+.account-name {
+  width: 136px;
+}
+
+#add-account h4 {
+  padding: 10px 0 0 20px;
+  margin: 0;
+}
+
+#add-account {
+  margin-top: 20px;
+}
+
+.field input,
+.field select {
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.field input {
+  width: 100px;
+}
+
+.field select {
+  width: 65px;
+}
+
+.field p {
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.account-type {
+  width: 100px;
+  margin-left: 0;
+}
+
+.active {
+  color: green;
+}
+
+#add-account-button {
+  margin: 37px 20px 0 0;
 }
