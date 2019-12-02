@@ -73,7 +73,7 @@ var accountsHTML =
 </section>`;
 var dashButton = document.getElementById('dash');
 var dashHTML =
-`<main id="dash-page">
+`<section id="dash-page">
   <h1>Balancing Act</h1>
   <div id="left">
     <section id="welcome">
@@ -96,7 +96,7 @@ var dashHTML =
     </section>
   <section class="accounts">
     <h3>Accounts</h3>
-    <button>MANAGE ACCOUNTS</button>
+    <button id="accounts-button">MANAGE ACCOUNTS</button>
   </section>
     <section class="account_names">
       <section id="checking">
@@ -190,8 +190,7 @@ var dashHTML =
     </tr>
   </table>
 </div>
-</main>`;
-var person = prompt("What is your name?", "Buttercup");
+</section>`;
 var profileButton = document.getElementById('profile');
 var transactionsButton = document.getElementById('transactions');
 var transHTML =
@@ -352,33 +351,33 @@ var transHTML =
       <img id="x2" src="assets/close.svg"/>
     </section>
 </section>`;
-var x = document.getElementById('x');
 
-if (person != null) {
-  document.getElementById("message").innerHTML =
-  "Welcome, " + person + "!";
-};
-
+document.addEventListener('DOMContentLoaded', function() {
+    addDashSection();
+    var person = prompt("What is your name?", "Buttercup");
+    if (person != null) {
+      document.getElementById("message").innerHTML =
+      "Welcome, " + person + "!";
+    };
+});
 
 dashButton.addEventListener('click', function () {
   addDashSection();
-  showAgain('dash-page', 'transaction-section-to-add', 'accounts-section-to-add');
+  showAgain('dash-page-to-add', 'transaction-section-to-add', 'accounts-section-to-add');
   makeTeal(dashButton, transactionsButton, profileButton);
 });
 
 profileButton.addEventListener('click', function () {
   addAccountsSection();
-  showAgain('accounts-section-to-add', 'transaction-section-to-add', 'dash-page');
+  showAgain('accounts-section-to-add', 'transaction-section-to-add', 'dash-page-to-add');
   makeTeal(profileButton, transactionsButton, dashButton);
 });
 
 transactionsButton.addEventListener('click', function () {
   addTransactionsSection();
-  showAgain('transaction-section-to-add', 'accounts-section-to-add', 'dash-page');
+  showAgain('transaction-section-to-add', 'accounts-section-to-add', 'dash-page-to-add');
   makeTeal(transactionsButton, dashButton, profileButton);
 });
-
-x.addEventListener('click', function () {hide('welcome')});
 
 function addAccountsSection() {
   var newAccountsSection = document.getElementById('accounts-section-to-add');
@@ -386,8 +385,19 @@ function addAccountsSection() {
 }
 
 function addDashSection() {
-  var mainDashSection = document.getElementById('dash-page');
+  var mainDashSection = document.getElementById('dash-page-to-add');
   mainDashSection.innerHTML = dashHTML;
+  var accountsButton = document.getElementById('accounts-button');
+  var x = document.getElementById('x');
+  addXToWelcomeBanner();
+  accountsButton.addEventListener('click',function () {
+    addAccountsSection();
+    showAgain('accounts-section-to-add', 'transaction-section-to-add', 'dash-page-to-add');
+    makeTeal(profileButton, transactionsButton, dashButton);
+  });
+  function addXToWelcomeBanner() {
+    x.addEventListener('click', function () {hide('welcome')});
+  }
 }
 
 function addTransactionsSection() {
@@ -397,20 +407,17 @@ function addTransactionsSection() {
 }
 
 function addTransEventListeners() {
-  // On button click, either log expense or show fields that need to be updated
   var expenseButton = document.getElementById('log');
   expenseButton.addEventListener('click', logNewExpense);
-  // Exit out of expense pop up
   x2.addEventListener('click', function () {hide('expense-section')});
-  // Mark empty required fields in red
 }
 
 function hide(banner) {
   var item = document.getElementById(banner);
   item.style.display = 'none';
+  console.log("X was clicked");
 }
 
-//Expense banner function
 function logNewExpense() {
   var payee = document.getElementById('payee');
   var amount = document.getElementById('amount');
@@ -447,7 +454,6 @@ function makeTeal(button1, button2, button3) {
   button3.classList.remove('tealClick');
 }
 
-//Show content again when clicking clipboard
 function showAgain(content, toHide1, toHide2) {
   var allContent = document.getElementById(content);
   allContent.style.display = '';
